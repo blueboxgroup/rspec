@@ -185,7 +185,8 @@ module Spec
 
       def colour=(colour)
         @colour = colour
-        if @colour && Config::CONFIG['host_os'] =~ /mswin|mingw/ ;\
+        # if @colour && Config::CONFIG['host_os'] =~ /mswin|mingw/ ;\
+        if @colour && RbConfig::CONFIG['host_os'] =~ /mswin|mingw/ ;\
           begin ;\
             replace_output = @output_stream.equal?($stdout) ;\
             require 'rubygems' unless ENV['NO_RUBYGEMS'] ;\
